@@ -1,0 +1,218 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    height: 100%;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+#root {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    .sidebar {
+        flex: 1 0 20%;
+        max-width: 20%;
+        background-color: rgb(39, 38, 38);
+        color: #eee;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        .sidebar-title {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+        .sidebar-body {
+            padding: 12px;
+            .form-group {
+                margin-bottom: 12px;
+                label {
+                    display: block;
+                    font-weight: 400;
+                    margin-bottom: 8px;
+                }
+                .form-control {
+                    font-size: 15px;
+                    border: 1px solid #eee;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    > input[type="file"] {
+                        padding: 8px;
+                        width: 100%;
+                    }
+                    > textarea {
+                        background: none;
+                        border: none;
+                        width: 100%;
+                        color: #eee;
+                        padding: 8px;
+                        font-size: 15px;
+                        font-family: inherit;
+                        resize: none;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    > select {
+                        height: 35px;
+                        width: 100%;
+                        background: transparent;
+                        border: none;
+                        color: #eee;
+                        > option {
+                            color: #000;
+                        }
+                    }
+                    > input {
+                        width: 100%;
+                        background: transparent;
+                        border: 1px none;
+                        height: 35px;
+                        padding: 12px;
+                        color: #eee;
+                        font-size: 15px;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+                > button {
+                    height: 35px;
+                    background: rgb(43, 107, 226);
+                    border: none;
+                    color: #fff;
+                    width: 100%;
+                    border-radius: 6px;
+                    font-size: 15px;
+                    transition: all .2s ease;
+                    cursor: pointer;
+                    &:hover {
+                        background: darken(rgb(43, 107, 226), 10%);
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        background-color: #eee;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .tweet {
+            border-radius: 6px;
+            width: 598px;
+            padding: 16px;
+            background-color: #15202b;
+            .tweet-head {
+                display: flex;
+                align-items: center;
+                .profile-photo {
+                    flex-basis: 52px;
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: 12px;
+                    position: relative;
+                    background-color: #eee;
+                    img {
+                        position: absolute;
+                        inset: 0;
+                        margin: auto;
+                        max-width: 100%;
+                    }
+                }
+                .user {
+                    flex: 1;
+                    .name {
+                        display: flex;
+                        align-items: center;
+                        font-size: 15px;
+                        color: #f7f9f9;
+                        font-weight: 600;
+                        line-height: 23px;
+                        svg {
+                            margin-left: 2px;
+                            width: 20px;
+                            height: 20px;
+                            path {
+                                fill: #f7f9f9;
+                            }
+                        }
+                    }
+                    .username {
+                        font-size: 15px;
+                        color: #8b98a5;
+                    }
+                }
+            }
+            .tweet-content {
+                margin-top: 12px;
+                span {
+                    font-size: 23px;
+                    line-height: 28px;
+                    color: #f7f9f9;
+                    word-break: break-all;
+                }
+            }
+            .tweet-date {
+                margin: 16px 0;
+                span {
+                    font-size: 15px;
+                    line-height: 20px;
+                    color: #8b98a5;
+                }
+                .break {
+                    padding: 0 4px;
+                }
+            }
+            .tweet-stats {
+                padding: 16px 4px;
+                border-top: 1px solid #38444d;
+                border-bottom: 1px solid #38444d;
+                display: flex;
+                div {
+                    color: #8b98a5;
+                    font-size: 14px;
+                    line-height: 16px;
+                    margin-right: 20px;
+                    span {
+                        color: #fff;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .tweet-footer {
+                height: 48px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .icon {
+                    width: 22.5px;
+                    height: 22.5px;
+                    svg {
+                        path {
+                            fill: #8b98a5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.download-link {
+    display: none;
+}
