@@ -1,7 +1,7 @@
-import "./style.scss"
 import { createRef, useState } from "react";
 import { toBlob } from 'html-to-image';
 import * as FileSaver from 'file-saver';
+import "./style.scss"
 
 function App() {
   const [avatar, setAvatar] = useState("")
@@ -36,14 +36,11 @@ function App() {
     reader.readAsDataURL(e.target.files[0]);
   }
 
-  const tweetNumberFormat = number => {
-    let numArray = String(number).split("")
-    if(number >= 1000 && number <= 9999){
-      numArray.splice(1, 0, ".");
-      return numArray.join("")
-    }
-    
-    return number
+  const numberFormat = number => {
+    return Intl.NumberFormat("tr-TR", {
+      notation: "compact",
+      maximumFractionDigits: 2
+    }).format(number);
   }
 
   return (
@@ -159,13 +156,13 @@ function App() {
             </div>
             <div className="tweet-stats">
               <div>
-                <span>{tweetNumberFormat(retweet)}</span> Retweet
+                <span>{numberFormat(retweet)}</span> Retweet
               </div>
               <div>
-                <span>{quotationRetweet}</span> Alıntı Tweetler
+                <span>{numberFormat(quotationRetweet)}</span> Alıntı Tweetler
               </div>
               <div>
-                <span>{like}</span> Beğeni
+                <span>{numberFormat(like)}</span> Beğeni
               </div>
             </div>
             <div className="tweet-footer">
