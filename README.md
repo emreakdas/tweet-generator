@@ -3,5 +3,5 @@
 https://tweet-generator-seven.vercel.app/
 
 Todo:
--~~-Number format~~
+- ~~-Number format~~
 - Emoji support
